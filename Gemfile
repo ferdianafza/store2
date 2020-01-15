@@ -56,4 +56,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
-gem 'magnifyjs_rails'
+# <<<<<<< HEAD
+# gem 'magnifyjs_rails'
+# =======
+# gem 'magnifier-rails'
+# >>>>>>> 60fd43edebefc6a463e5907192560cb69d197e28

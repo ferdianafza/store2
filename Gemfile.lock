@@ -96,6 +96,7 @@ GEM
     loofah (2.4.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
+    magnifier-rails (0.0.3)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (0.3.3)
@@ -219,6 +220,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
+  magnifier-rails
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.1)
   sass-rails (>= 6)
