@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style>
+  .banner {
+    width: 200px;
+    height: 200px;
+  }
+</style>
+<p id="notice"><%= notice %></p>
+<div class="item" style="margin-left: 300px;">
+<p style="float: left;">
+<% if @product.image.attached? %>
+ <%= image_tag @product.image, :class => 'banner' %>
+<% end %>
+<!-- <p>
+  <strong>Title:</strong>
+  <%= @product.title %>
+</p> -->
+<div class="identy" style="margin-left: 300px;">
+<br>
+<br>
+<p>
+  <h3><strong><%= @product.title %></strong></h3>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
+</div>
+</p>
+</p>
+</div>
+
+<% unless @product.comments.empty? %>
+
+<h3><%= pluralize(@product.comments.size, ‘Comment’) %></h3>
+
+<% end %>
+
+
+
+<div id=”comments”>
+
+<% unless @product.comments.empty? %>
+
+<%= render @product.comments %>
+
+<% end %>
+
+</div>
+
+
+<br>
+<br>
+
+<h3>Add a comment:</h3>
+
+
+
+<%= render partial: 'comments/form'  %>
+

@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style>
+  .banner {
+    width: 200px;
+    height: 200px;
+  }
+</style>
+<div class="card">
+  <div class="card-body">
+  <% if product.image.attached? %>
+ <%= image_tag product.image, :class => 'banner' %>
+<% end %>
+  <h3 class="card-tittle"><%= product.title %></h3>
+  <p class="card-text"><%= product.description %><br/><small>Rp. </small><%= product.price %> </p>
+  <div class="card-footer">
+    <%= link_to 'View Product', product_path(product)%>
+    <!--  = link_to 'View Product', product_path(product) -->
+  </div>
+  </div>
+</div>

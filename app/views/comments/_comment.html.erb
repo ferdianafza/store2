@@ -1,0 +1,17 @@
+<div class='comment' data-time='<%= comment.created_at.to_i %>'>
+
+<strong><%= comment.user.email %></strong>
+
+<em>on <%= comment.created_at.strftime('%b %d, %Y at %I:%M %p') %></em>
+
+<%= comment.content %>
+<% if user_signed_in? %>
+  <% if current_user.id == comment.user.id %>
+        <div class="actions">
+        <%= link_to "Del", [comment.product, comment], data: { confirm: 'Are you sure?' }, :method => :delete %>
+        </div>
+  <% end %>
+<%end%>
+
+
+</div>
