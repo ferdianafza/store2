@@ -2,7 +2,7 @@ class HomesController < ApplicationController
     before_action :set_product, only: [:show]
 
   def index
-    @products = Product.all
+    @products = Product.order(created_at: :desc).limit(6)
   end
 
   def show
