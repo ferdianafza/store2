@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :user
   has_many :comments
-  has_one_attached :image
+  has_many_attached :images
   has_many :contents
 
   validates :title, :description, presence: true

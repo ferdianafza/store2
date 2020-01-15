@@ -8,8 +8,10 @@
 <p id="notice"><%= notice %></p>
 <div class="item" style="margin-left: 300px;">
 <p style="float: left;">
-<% if @product.image.attached? %>
- <%= image_tag @product.image, :class => 'banner' %>
+<% if @product.images.attached? %>
+  <% @product.images.each do |image| %>
+    <%= image_tag image, :class => 'banner', :id => 'banner' %>
+  <% end %>
 <% end %>
 <!-- <p>
   <strong>Title:</strong>
@@ -65,4 +67,10 @@
 
 
 <%= render partial: 'comments/form'  %>
+
+ <script type="text/javascript">
+  ('document').ready(function(){
+    ('#banner').magnifier();
+  });
+ </script>
 
