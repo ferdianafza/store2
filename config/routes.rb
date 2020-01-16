@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :line_items
+  resources :carts
+  resources :invoices
+  resources :orders
   resources :comments
    devise_for :users, controllers: { sessions: 'users/sessions' }
   devise_scope :user do
