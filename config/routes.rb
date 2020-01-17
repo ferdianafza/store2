@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'contact/index'
+  get 'blog/index'
+  get 'blog/single_blog'
+  get 'abouts/index'
   resources :line_items
   resources :carts
   resources :invoices
