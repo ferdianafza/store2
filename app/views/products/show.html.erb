@@ -22,20 +22,11 @@
       <div class="col-lg-5">
         <div class="product_slider_img">
           <div id="vertical">
-            <div data-thumb="@product.images.first">
-              <% if @product.images.attached? %>
-                 <%= image_tag @product.images.first %>
-              <% end %>
-            </div>
-            <div data-thumb="<%= asset_path('product_details/prodect_details_2.png') %>">
-              <img src="<%= asset_path('product_details/prodect_details_2.png') %>"/>
-            </div>
-            <div data-thumb="<%= asset_path('product_details/prodect_details_3.png') %>">
-              <img src="<%= asset_path('product_details/prodect_details_3.png') %>" />
-            </div>
-            <div data-thumb="<%= asset_path('product_details/prodect_details_4.png') %>">
-              <img src="<%= asset_path('product_details/prodect_details_4.png') %>" />
-            </div>
+            <% @product.images.each do |image| %>
+              <div data-thumb="<%= rails_blob_path(image) %>">
+                <img src="<%= rails_blob_path(image) %>"/>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
@@ -210,7 +201,7 @@
               <div class="review_item">
                 <div class="media">
                   <div class="d-flex">
-                    <img src="img/product/single-product/review-1.png" alt="" />
+                    <img src="<%= asset_path "product/single-product/review-1.png" %>" alt="" />
                   </div>
                   <div class="media-body">
                     <h4>Blake Ruiz</h4>
@@ -228,7 +219,7 @@
               <div class="review_item reply">
                 <div class="media">
                   <div class="d-flex">
-                    <img src="img/product/single-product/review-2.png" alt="" />
+                    <img src="<%= asset_path "product/single-product/review-2.png" %>" alt="" />
                   </div>
                   <div class="media-body">
                     <h4>Blake Ruiz</h4>
@@ -246,7 +237,7 @@
               <div class="review_item">
                 <div class="media">
                   <div class="d-flex">
-                    <img src="img/product/single-product/review-3.png" alt="" />
+                    <img src="<%= asset_path "product/single-product/review-3.png" %>" alt="" />
                   </div>
                   <div class="media-body">
                     <h4>Blake Ruiz</h4>
@@ -362,7 +353,7 @@
               <div class="review_item">
                 <div class="media">
                   <div class="d-flex">
-                    <img src="img/product/single-product/review-1.png" alt="" />
+                    <img src="<%= asset_path "product/single-product/review-1.png" %>" alt="" />
                   </div>
                   <div class="media-body">
                     <h4>Blake Ruiz</h4>
@@ -383,7 +374,7 @@
               <div class="review_item">
                 <div class="media">
                   <div class="d-flex">
-                    <img src="img/product/single-product/review-2.png" alt="" />
+                    <img src="<%= asset_path "product/single-product/review-2.png" %>" alt="" />
                   </div>
                   <div class="media-body">
                     <h4>Blake Ruiz</h4>
@@ -404,7 +395,7 @@
               <div class="review_item">
                 <div class="media">
                   <div class="d-flex">
-                    <img src="img/product/single-product/review-3.png" alt="" />
+                    <img src="<%= asset_path "product/single-product/review-3.png" %>" alt="" />
                   </div>
                   <div class="media-body">
                     <h4>Blake Ruiz</h4>
@@ -506,7 +497,7 @@
         <div class="col-lg-3 col-sm-6">
             <div class="single_category_product">
                 <div class="single_category_img">
-                    <img src="img/category/category_2.png" alt="">
+                    <img src="<%= asset_path('category/category_2.png') %>" alt="">
                     <div class="category_social_icon">
                         <ul>
                             <li><a href="#"><i class="ti-heart"></i></a></li>
@@ -523,7 +514,7 @@
         <div class="col-lg-3 col-sm-6">
             <div class="single_category_product">
                 <div class="single_category_img">
-                    <img src="img/category/category_3.png" alt="">
+                    <img src="<%= asset_path('category/category_3.png') %>" alt="">
                     <div class="category_social_icon">
                         <ul>
                             <li><a href="#"><i class="ti-heart"></i></a></li>
@@ -540,7 +531,7 @@
         <div class="col-lg-3 col-sm-6">
             <div class="single_category_product">
                 <div class="single_category_img">
-                    <img src="img/category/category_4.png" alt="">
+                    <img src="<%= asset_path('category/category_4.png') %>" alt="">
                     <div class="category_social_icon">
                         <ul>
                             <li><a href="#"><i class="ti-heart"></i></a></li>
@@ -557,7 +548,7 @@
         <div class="col-lg-3 col-sm-6">
             <div class="single_category_product">
                 <div class="single_category_img">
-                    <img src="img/category/category_5.png" alt="">
+                    <img src="<%= asset_path('category/category_5.png') %>" alt="">
                     <div class="category_social_icon">
                         <ul>
                             <li><a href="#"><i class="ti-heart"></i></a></li>
