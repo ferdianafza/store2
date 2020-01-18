@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'elements/index'
+  get 'confirmation/index'
+  get 'tracking/index'
+  get 'checkout/index'
+  get 'category/index'
   get 'contact/index'
   get 'blog/index'
   get 'blog/single_blog'
