@@ -80,8 +80,12 @@
                 <div class="new_arrival_iner filter-container">
 
                     <% @products.each_with_index do |product, i| %>
-                      <% if i >= 4 %>
-                        <% temp = "weidth_#{3-i}" %>
+                    <% if i >= 5 %>
+                        <% temp = "weidth_#{i-4}" %>
+                    <% elsif i >= 4 %>
+                        <% temp = "weidth_#{i-2}" %>
+                    <% elsif i >= 3 %>
+                        <% temp = "weidth_3" %>
                       <% else %>
                         <% temp = "weidth_#{i+1}" %>
                       <% end %>
