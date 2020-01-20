@@ -34,8 +34,10 @@ ActiveRecord::Schema.define(version: 2020_01_20_125236) do
   end
 
   create_table "carts", force: :cascade do |t|
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -96,6 +98,7 @@ ActiveRecord::Schema.define(version: 2020_01_20_125236) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "carts", "users"
   add_foreign_key "comments", "products"
   add_foreign_key "comments", "users"
   add_foreign_key "invoices", "order_ids"

@@ -2285,7 +2285,11 @@ ul {
   height: 14px;
   right: -8px;
   top: -8px;
+<<<<<<< HEAD
   /*content: "5";*/
+=======
+  content: <%= @cart.line_items.count %>;
+>>>>>>> e3d1ddc4e85b9dee988c20cd453530967434232b
   text-align: center;
   line-height: 15px;
   font-size: 10px;
