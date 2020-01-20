@@ -29,12 +29,15 @@
               </tr>
             </thead>
             <tbody>
+            	<p><%= @cart.line_items.count %></p>
             <% @cart.line_items.each do |item| %>
               <tr>
                 <td>
                   <div class="media">
                     <div class="d-flex">
-                      <img src="<%= asset_path('arrivel/arrivel_1.png') %>" alt="" />
+                       <% if item.product.images.attached? %>
+                       <%= image_tag item.product.images.first %>
+                      <% end %>
                     </div>
                     <div class="media-body">
                       <p><%= item.product.title %></p>
@@ -85,7 +88,7 @@
                   <h5>Subtotal</h5>
                 </td>
                 <td>
-                  <h5>$2160.00</h5>
+                  <h5></h5>
                 </td>
               </tr>
               <tr class="shipping_area">
